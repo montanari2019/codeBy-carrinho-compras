@@ -1,0 +1,42 @@
+.container{
+
+}
+
+.container > strong{
+    text-align: center;
+    display: block;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    border-bottom: 1px solid var(--gray-200);
+    padding-bottom: 1rem;
+}
+
+
+.flexContainerListItem{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 1rem;
+}
+
+.totalizers{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid var(--gray-200);
+    margin-bottom: 5rem;
+    padding: 1rem;
+}
+
+.totalizersItem{
+    font-size: 1.5rem;
+    padding: 2rem 0;
+}
+
+@media (min-width: 1000px){
+    .flexContainerListItem{
+        margin: 0 10rem;
+    }
+    
+    
+}
