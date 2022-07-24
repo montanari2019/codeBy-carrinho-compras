@@ -1,21 +1,19 @@
 .container{
     display: flex;
     align-items: flex-start;
-    justify-content: flex-start;
-    padding: 2rem;
-
-    
+    padding: 1rem;
 }
 
 .container > img {
-    width: 10rem;
-    height: 10rem;
+    width: 9rem;
+    height: 9rem;
     border: 1px solid var(--gray-200);
     border-radius: 5px;
 }
 
 .container > strong {
-    display: block;
+    font-size: 1.2rem;
+   
 }
 
 .dataItem > p {
@@ -24,17 +22,16 @@
 
 .dataItem > h6{
     font-size: 1.1rem;
+    
 }
 
 .dataItem{
-    margin-left: 2rem;
+    margin-left: 1rem;
 }
 
 @media (min-width: 999px){
-    .container{
-        justify-content: center;
-    }
+
     .dataItem{
-        margin-left: 4rem;
+        margin-left: 2rem;
     }
 }

@@ -1,13 +1,20 @@
+import { useState } from "react";
+import { Item } from "../../model/IProductCart";
 import styleItem from "./Item.module.css";
 
-export function Item() {
+export function ItemList({imageUrl, name, price, sellingPrice}: Item) {
+
+  const priceReal = (price / 100).toLocaleString('pt-br', {style: 'currency', currency: 'BRL'});
+  const sellingPriceReal = (sellingPrice / 100).toLocaleString('pt', {style: 'currency', currency: 'BRL'});
+  
+
   return (
     <div className={styleItem.container}>
-      <img src="https://images.unsplash.com/photo-1553452118-621e1f860f43?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" />
+      <img src={imageUrl} />
       <div className={styleItem.dataItem}>
-        <strong>Trufa de morango</strong>
-        <p>R$ 1,23</p>
-        <h6>R$ 1,21</h6>
+        <strong>{name}</strong>
+        <p>{priceReal}</p>
+        <h6>{sellingPriceReal}</h6>
       </div>
     </div>
   );

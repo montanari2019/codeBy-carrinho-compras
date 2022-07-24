@@ -1,7 +1,7 @@
 export interface IProductCart {
     value:      number;
     items:      Item[];
-    totalizers: Totalizer[];
+    totalizers: TotalizerProduct[];
 }
 
 export interface Item {
@@ -11,7 +11,7 @@ export interface Item {
     imageUrl:     string;
 }
 
-export interface Totalizer {
+export interface TotalizerProduct {
     id:    string;
     name:  string;
     value: number;

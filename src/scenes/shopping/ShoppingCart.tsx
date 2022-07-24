@@ -5,8 +5,9 @@ import { defaultFetcher } from "../../config/fetcher";
 import { IProductCart } from "../../model/IProductCart";
 import { useParams } from "react-router-dom";
 import { Header } from "../../components/header/Header";
-import { Item } from "../../components/item/Item";
+import { ItemList } from "../../components/item/Item";
 import { Badge } from "../../components/badge/Badge";
+import { Totalizer } from "../../components/totalizer/Totalizer";
 
 export function ShoppingCart() {
   const { selectedCard } = useParams();
@@ -28,20 +29,29 @@ export function ShoppingCart() {
       <Header />
       <div className={styleShoppingCart.container}>
         <strong>Meu carrinho</strong>
-        <div>
-          <div className={styleShoppingCart.flexContainerListItem}>
-            <Item />
-            <Item />
-            <Item />
-          </div>
-          <div className={styleShoppingCart.totalizers}>
-            <div className={styleShoppingCart.totalizersItem}>
-              <strong>Total</strong>
-              <strong>R$ 9,50</strong>
+        <div className={styleShoppingCart.alingCenterContainer}>
+          <div className={styleShoppingCart.flexContainerList}>
+            <div className={styleShoppingCart.flexContainerListItem}>
+              {data?.items.map((item) => (
+                <ItemList
+                  imageUrl={item.imageUrl}
+                  name={item.name}
+                  price={item.price}
+                  sellingPrice={item.sellingPrice}
+                />
+              ))}
             </div>
-            { selectedCard === "acima-10" ? <Badge/> : <br/>}
-            
           </div>
+
+          <div className={styleShoppingCart.totalizers}>
+            {data?.totalizers.map((totalizer) =>
+              totalizer.id === "Items" ? <Totalizer id={totalizer.id} name={totalizer.name} value={totalizer.value}/> : null
+            )}
+
+            {selectedCard === "acima-10" ? <Badge /> : null}
+          </div>
+
+          <button className={styleShoppingCart.buttonFinalizePurchase} type="button">Finalizar Compra</button>
         </div>
       </div>
     </div>
