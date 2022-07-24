@@ -1,14 +1,12 @@
 .container{
-    background: var(--white);
-
-    
+    background: var(--white);  
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: 1.25rem;
     
-}
+}   
 
 .container > img{
     height: 2rem;

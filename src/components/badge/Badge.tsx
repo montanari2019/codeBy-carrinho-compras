@@ -1,7 +1,9 @@
+import styleBadge from "./Badge.module.css"
+
 export function Badge() {
     return (
         <div>
-            <h1>Badge</h1>
+            <p className={styleBadge.strongGreen}>Parabéns, sua compra possui frete grátis</p>
         </div>
     )
 }
