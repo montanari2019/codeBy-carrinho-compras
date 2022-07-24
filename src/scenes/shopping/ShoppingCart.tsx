@@ -30,6 +30,7 @@ export function ShoppingCart() {
       <div className={styleShoppingCart.container}>
         <strong>Meu carrinho</strong>
         <div className={styleShoppingCart.alingCenterContainer}>
+          
           <div className={styleShoppingCart.flexContainerList}>
             <div className={styleShoppingCart.flexContainerListItem}>
               {data?.items.map((item) => (
