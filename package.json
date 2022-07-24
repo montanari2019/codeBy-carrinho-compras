@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "star": "node server.js",
-    "build": "tsc && vite build",
+    "build": "node server.js",
+    "star": "tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
