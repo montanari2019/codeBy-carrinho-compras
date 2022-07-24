@@ -1,6 +1,6 @@
 
 import express from 'express'
-import { dirname, resolve } from 'path'
+import { dirname, path } from 'path'
 import { fileURLToPath } from 'url';
 
 
